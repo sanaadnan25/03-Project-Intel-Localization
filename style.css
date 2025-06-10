@@ -1,0 +1,373 @@
+/* Add your CSS here */
+
+/* Set a modern font and background color for the whole page */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f4f8fb;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the header/hero section */
+.hero {
+  /* Gradient now starts from light blue instead of white */
+  background: linear-gradient(
+    90deg,
+    #e6f2fa 0%,      /* light blue */
+    #b3d8f7 15%,     /* light blue */
+    #5bb0ea 40%,     /* medium blue */
+    #0071c5 100%     /* Intel blue */
+  );
+  color: white;
+  padding: 40px 0 30px 0;
+  text-align: center;
+}
+
+/* Center the content inside the hero */
+.hero-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Style the Intel logo */
+.logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+/* Make the Intel logo larger */
+.large-logo {
+  width: 160px; /* Increased from 100px */
+  max-width: 90vw;
+  margin-bottom: 28px;
+}
+
+/* Main heading style */
+.hero h1 {
+  font-size: 2.2em;
+  margin: 10px 0 15px 0;
+}
+
+/* Subheading/description style */
+.hero p {
+  font-size: 1.1em;
+  margin-bottom: 0;
+}
+
+/* Timeline section styles */
+.timeline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px; /* Space between cards */
+  padding: 40px 10px;
+  background: #fff;
+}
+
+/* Each card in the timeline */
+.card {
+  background: #f9fbfd;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  width: 270px;
+  padding: 20px 18px 18px 18px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
+}
+
+/* Make cards pop on hover */
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 6px 20px rgba(0,113,197,0.13);
+  background: #e6f2fa;
+}
+
+/* Card image style */
+.card-img {
+  width: 100%;
+  border-radius: 8px;
+  margin: 12px 0;
+}
+
+/* Container for image and hover description */
+.card-img-container {
+  position: relative; /* Needed for absolute positioning the description */
+  width: 100%;
+  height: auto;
+}
+
+/* Hide the description by default */
+.card-desc {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Gradient now starts from light blue instead of white */
+  background: linear-gradient(
+    90deg,
+    #e6f2fa 0%,
+    #b3d8f7 15%,
+    #5bb0ea 40%,
+    #0071c5 100%
+  );
+  color: #111; /* Make description text black for better readability */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.2s;
+  font-size: 1em;
+  text-align: center;
+  padding: 16px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  pointer-events: none; /* Prevents accidental selection */
+}
+
+/* Show the description when hovering over the image container */
+.card-img-container:hover .card-desc {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Card headings */
+.card h2 {
+  font-size: 1.3em;
+  color: #0071c5;
+  margin: 0 0 4px 0;
+}
+
+.card h3 {
+  font-size: 1.1em;
+  margin: 0 0 10px 0;
+  color: #222;
+}
+
+/* Card paragraph */
+.card p {
+  font-size: 0.98em;
+  color: #444;
+  margin: 0;
+  display: none;
+}
+
+/* Timeline note at the bottom */
+.timeline-note {
+  text-align: center;
+  color: #0071c5;
+  font-size: 1em;
+  margin: 20px 0 30px 0;
+}
+
+/* --- Image Swipe Gallery Styles --- */
+
+/* Container for the swipeable images */
+.image-gallery {
+  display: flex; /* Arrange images in a row */
+  overflow-x: auto; /* Allow horizontal scrolling/swiping */
+  gap: 20px; /* Space between images */
+  padding: 30px 10px;
+  margin: 0 auto 30px auto;
+  max-width: 1000px;
+  scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+/* Hide scrollbar for a cleaner look (optional for beginners) */
+.image-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+/* Each image card in the gallery */
+.gallery-card {
+  position: relative; /* Needed for overlay text */
+  width: 250px;
+  height: 150px;
+  flex: 0 0 auto; /* Prevent shrinking */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  background: #fff;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+/* Slight zoom on hover */
+.gallery-card:hover {
+  transform: scale(1.04);
+}
+
+/* The image itself */
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay text, hidden by default */
+.gallery-text {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,113,197,0.85);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0; /* Hidden */
+  transition: opacity 0.2s;
+  font-size: 1.1em;
+  text-align: center;
+  padding: 15px;
+}
+
+/* Show text on hover */
+.gallery-card:hover .gallery-text {
+  opacity: 1;
+}
+
+/* Timeline row for horizontal scrolling */
+.timeline-row {
+  display: flex; /* Arrange cards in a row */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  gap: 24px; /* Space between cards */
+  padding: 40px 10px;
+  background: #fff;
+  scroll-behavior: smooth; /* Smooth scrolling when swiping */
+}
+
+/* Show scrollbar for timeline-row */
+.timeline-row::-webkit-scrollbar {
+  height: 12px; /* Make scrollbar visible and a bit larger */
+}
+
+.timeline-row::-webkit-scrollbar-thumb {
+  background: #b3c7e6;
+  border-radius: 6px;
+}
+
+.timeline-row::-webkit-scrollbar-track {
+  background: #e6f2fa;
+  border-radius: 6px;
+}
+
+/* Make sure cards don't shrink and keep their width */
+.timeline-row .card {
+  flex: 0 0 270px; /* Fixed width for each card */
+}
+
+/* Show exactly 4 cards per screen before scrolling */
+.timeline-row.fit-four {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 0; /* No gap so 4 cards fit perfectly */
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Each card takes up exactly 25% of the timeline-row's width */
+.timeline-row.fit-four .card {
+  flex: 0 0 25%;
+  max-width: 25%;
+  min-width: 0;
+  margin-right: 0;
+  border-right: 1px solid #e0e6ed;
+  /* Remove fixed width and padding that could cause overflow */
+  width: auto;
+  padding: 20px 10px 18px 10px;
+  box-sizing: border-box;
+}
+
+/* Remove border from the last card */
+.timeline-row.fit-four .card:last-child {
+  border-right: none;
+}
+
+/* Responsive: cards get wider on small screens */
+@media (max-width: 900px) {
+  .timeline-row.fit-four .card {
+    flex: 0 0 80vw;
+    max-width: 350px;
+    border-right: none;
+  }
+  .timeline-row.fit-four {
+    gap: 16px;
+  }
+  .large-logo {
+    width: 110px;
+  }
+}
+
+/* Responsive: stack gallery on small screens */
+@media (max-width: 700px) {
+  .image-gallery {
+    gap: 12px;
+    padding: 16px 2px;
+    max-width: 100vw;
+  }
+  .gallery-card {
+    width: 80vw;
+    max-width: 300px;
+    height: 120px;
+  }
+}
+
+/* Responsive: stack cards on small screens */
+@media (max-width: 700px) {
+  .timeline {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 20px 4px;
+  }
+  .card {
+    width: 95%;
+    max-width: 350px;
+  }
+}
+
+/* Responsive: adjust logo and cards in timeline-row.fit-four on smaller screens */
+@media (max-width: 900px) {
+  .timeline-row.fit-four .card {
+    flex: 0 0 80vw;
+    max-width: 350px;
+  }
+  .timeline-row.fit-four {
+    gap: 16px;
+  }
+  .large-logo {
+    width: 110px;
+  }
+}
+
+/* Responsive: stack timeline cards vertically on small screens and fit header text */
+@media (max-width: 700px) {
+  .timeline-row.fit-four {
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center;    /* Center cards horizontally */
+    gap: 18px;
+    padding: 20px 4px;
+    overflow-x: visible;    /* Remove horizontal scroll */
+  }
+  .timeline-row.fit-four .card {
+    max-width: 350px;
+    width: 95%;
+  }
+  /* Make header text fit and wrap nicely on small screens */
+  .hero-content {
+    max-width: 98vw;
+    padding: 0 8px;
+    box-sizing: border-box;
+  }
+  .hero h1 {
+    font-size: 1.4em;
+    word-break: break-word;
+  }
+  .hero p {
+    font-size: 1em;
+    word-break: break-word;
+  }
+}
