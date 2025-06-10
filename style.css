@@ -4,10 +4,10 @@
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   background: #f4f8fb;
-  color: #222;
+  color: #181818; /* Changed from #222 to darker for better contrast */
   margin: 0;
   padding: 0;
-}
+} 
 
 /* Style the header/hero section */
 .hero {
@@ -67,7 +67,7 @@ body {
 
 /* Each card in the timeline */
 .card {
-  background: #f9fbfd;
+  background: #f1f5f9; /* Slightly darker for more contrast with white */
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.07);
   width: 270px;
@@ -112,7 +112,7 @@ body {
     #5bb0ea 40%,
     #0071c5 100%
   );
-  color: #111; /* Make description text black for better readability */
+  color: #181818; /* Changed from #111 to even darker for better contrast */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -135,20 +135,20 @@ body {
 /* Card headings */
 .card h2 {
   font-size: 1.3em;
-  color: #0071c5;
+  color: #005288; /* Darker blue for better contrast */
   margin: 0 0 4px 0;
 }
 
 .card h3 {
   font-size: 1.1em;
   margin: 0 0 10px 0;
-  color: #222;
+  color: #222222; /* Ensure it's dark enough */
 }
 
 /* Card paragraph */
 .card p {
   font-size: 0.98em;
-  color: #444;
+  color: #222; /* Changed from #444 to darker for better contrast */
   margin: 0;
   display: none;
 }
@@ -156,7 +156,7 @@ body {
 /* Timeline note at the bottom */
 .timeline-note {
   text-align: center;
-  color: #0071c5;
+  color: #005288; /* Darker blue for better contrast */
   font-size: 1em;
   margin: 20px 0 30px 0;
 }
@@ -370,4 +370,48 @@ body {
     font-size: 1em;
     word-break: break-word;
   }
+}
+
+/* Improve contrast for carousel controls and indicators */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #222; /* Dark background for better contrast */
+  border-radius: 50%;
+  opacity: 0.85;
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: #005288; /* Darker blue for better contrast */
+  opacity: 1;
+}
+
+.carousel-indicators .active {
+  background-color: #181818; /* Even darker for active indicator */
+}
+
+/* Improve contrast for carousel captions */
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.85); /* More opaque dark background */
+  color: #fff !important;           /* Ensure text is white */
+  border-radius: 8px;
+  padding: 1em 1.5em;
+}
+
+/* For carousel text (headings and paragraphs) */
+.carousel-caption h3,
+.carousel-caption h5,
+.carousel-caption p {
+  color: #fff !important; /* Force white text for clarity */
+  text-shadow: 1px 1px 4px #000;
+}
+
+/* Add spacing above and below carousel indicators (the swipe bars) */
+.carousel-indicators {
+  margin-bottom: 0;      /* Remove any default bottom margin */
+  margin-top: 8em;      /* Add more space above indicators to push them down */
+}
+
+/* Add spacing below carousel for separation from following text */
+.carousel {
+  margin-bottom: 2.5rem;
 }
